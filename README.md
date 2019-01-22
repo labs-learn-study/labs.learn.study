@@ -1,1 +1,28 @@
 # labs.learn.study
+
+Learn how to #DataCenter #Virtualization #SDN #Monitoring #CloudNative #AppDev #Storage #Containers #Federation ...
+
+Labs, not a singleton ab - you can, and should run everything here for yourself.
+
+Open - you can look at and web login to our public instances.
+
+On Premise - At "home" on bare metal, typically (but not exclusive, also usable on a Cloud provider).
+
+Primarily focused on using open source project supported by Red Hat, or of potential future interest (but not a hard rule).
+
+Recipes - ready to run, not (only) words in blog posts.   But also ;) blogging, cross-posting to relevant community's blogs.
+
+DevProd - when you run "like production", it makes it more real.  We have fun by monitoring each other's uptime!
+
+
+## Projects
+
+Roughly in the recommended order to set up:
+
+## Instances
+
+_Add URL to your instance here._
+
+## To Do (and what's Done)
+
+see [TODO.txt](TODO.txt) & [done.txt](done.txt)
