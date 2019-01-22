@@ -2,11 +2,11 @@
 
 Learn how to #DataCenter #Virtualization #SDN #Monitoring #CloudNative #AppDev #Storage #Containers #Federation ...
 
-Labs, not a singleton ab - you can, and should run everything here for yourself.
+Labs, not a singleton ab - you can, and should, run everything here for yourself.
 
 Open - you can look at and web login to our public instances.
 
-On Premise - At "home" on bare metal, typically (but not exclusive, also usable on a Cloud provider).
+On Premise - at "home" on bare metal (typically; but not exclusive, also usable on a Public Cloud provider).
 
 Primarily focused on using open source project supported by Red Hat, or of potential future interest (but not a hard rule).
 
