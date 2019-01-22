@@ -14,6 +14,13 @@ Recipes - ready to run, not (only) words in blog posts.   But also ;) blogging, 
 
 DevProd - when you run "like production", it makes it more real.  We have fun by monitoring each other's uptime!
 
+## Principles
+
+Script and automate everything, run anything from Git in CI/CD, only.
+
+Containerize everything.  Literally.  No exceptions.
+
+Monitor everything, using Prometheus and Grafana.
 
 ## Projects
 
