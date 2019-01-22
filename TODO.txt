@@ -8,9 +8,11 @@ x write README
 
 - Fedora minimal server & basic Ansible with Monitoring & Virtualization
 
-- OpenShift v4 KVM installation.  Router and DNS.
+- OpenShift v4 KVM installation.  
 
 - KVM scripting, how to?  Ansible?  Just virsh.bash?  New tool??
+
+- OpenShift(s!) @ Home: DynDNS, Router & Co.
 
 - Minecraft https://github.com/OASIS-learn-study
 
