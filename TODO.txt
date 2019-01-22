@@ -27,3 +27,26 @@ x write README
 - Network #monitoring scrape all data, OVS and physical switches, Prometheus and Grafana
 
 - automate load balance for server maintenance by WebDriver remote controlling home router (then YANG model that..)
+
+- OpenWrt in a VM? 
+- add additional physical GB NICs via USB 3.0 ???
+
+- VyOS (has a netconf agent) in a VM?
+
+- hardware router for home fiber & WiFi with VyOS or OpenWrt https://openwrt.org/toh/views/toh_available_864 
+
+- NETCONF VyOS (has a netconf agent)
+
+- NETCONF managed OpenWrt 
+  https://oldwiki.archive.openwrt.org/inbox/howto/opencpe
+  https://github.com/CZ-NIC/nuci
+  https://gitlab.labs.nic.cz/labs/jetconf/wikis/restconf-openwrt
+  https://github.com/opencpe/openwrt-packages
+
+- do other on https://en.wikipedia.org/wiki/List_of_router_and_firewall_distributions have NETCONF support?
+
+- PXE server
+  https://fedoramagazine.org/how-to-build-a-netboot-server-part-1/
+  https://fedoramagazine.org/how-to-build-a-netboot-server-part-2/
+  https://fedoramagazine.org/how-to-build-a-netboot-server-part-3/
+  https://fedoramagazine.org/how-to-build-a-netboot-server-part-4/
