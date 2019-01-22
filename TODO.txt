@@ -1,0 +1,29 @@
+x write README
+- find some colleagues
+- fix a better name for this?
+
+- uptime/ #monitoring Java container which GET a list of URLs every 1/5s (config), storing timestamp when tried and response time; keeping N
+- scrap uptime by another process which stores them in .. Prometheus.  Grafana dashboard.
+- RPi nginx "We're UP!"
+
+- Fedora minimal server & basic Ansible with Monitoring & Virtualization
+
+- OpenShift v4 KVM installation.  Router and DNS.
+
+- KVM scripting, how to?  Ansible?  Just virsh.bash?  New tool??
+
+- Minecraft https://github.com/OASIS-learn-study
+
+- Server & VM #monitoring scrape all data, OVS and physical switches
+
+- OpenShift Pipeline, from staging to production
+
+- eu-nexus.opendaylight.org
+
+- identity.labs.learn.study
+
+- ODL as SDN in OpenShift
+
+- Network #monitoring scrape all data, OVS and physical switches, Prometheus and Grafana
+
+- automate load balance for server maintenance by WebDriver remote controlling home router (then YANG model that..)
