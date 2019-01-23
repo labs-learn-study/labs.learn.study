@@ -14,6 +14,8 @@ x write README
 
 - OpenShift(s!) @ Home: DynDNS, Router & Co.
 
+- ngrok.com equivalent FLOSS? 
+
 - Minecraft https://github.com/OASIS-learn-study
 
 - Server & VM #monitoring scrape all data, OVS and physical switches
