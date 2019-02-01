@@ -10,7 +10,7 @@ x write README
 
 - OpenShift v4 KVM installation.  
 
-- Ansible from source, via Jenkins??  How-to dev?
+- Ansible from source, via https://www.zuul-ci.org? (not Jenkins?)  How-to dev?
 - Ansible Playbook recording https://getara.org, https://opensource.com/article/18/5/analyzing-ansible-runs-using-ara, 
 
 - KVM scripting, how to?  Ansible?  Just virsh.bash?  New tool??
