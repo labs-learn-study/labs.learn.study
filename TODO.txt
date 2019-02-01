@@ -7,6 +7,7 @@ x write README
 - RPi nginx "We're UP!"
 
 - Fedora minimal server & basic Ansible with Monitoring & Virtualization
+- Self testing.. how may be with https://pagure.io/standard-test-roles, https://fedoraproject.org/wiki/CI/Standard_Test_Interface, https://fedoraproject.org/wiki/CI/Standard_Test_Roles
 
 - OpenShift v4 KVM installation.  
 
