@@ -18,13 +18,14 @@ x write README
 
 - OpenShift(s!) @ Home: DynDNS, Router & Co.
 
-- Prometheus Node Exporter
+- Prometheus Node Exporter; ansible/ansible-role-prometheus-node-exporter on https://softwarefactory-project.io
+- Prometheus Grafana, Alerts; see ansible/ansible-role-prometheus-server, ansible/ansible-role-grafana, ansible/ansible-role-prometheus-alertmanager
+- Prometheus Kubernetes
+- Server & VM #monitoring scrape all data, OVS and physical switches
 
 - ngrok.com equivalent FLOSS? 
 
 - Minecraft https://github.com/OASIS-learn-study
-
-- Server & VM #monitoring scrape all data, OVS and physical switches
 
 - OpenShift Pipeline, from staging to production
 
