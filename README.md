@@ -34,14 +34,6 @@ Containerize everything.  Literally.  No exceptions.
 
 Monitor everything, using Prometheus and Grafana.
 
-## Projects
-
-Roughly in the recommended order to set up:
-
-## Instances
-
-_Add URL to your instance here._
-
 ## To Do (and what's Done)
 
 see [TODO.txt](TODO.txt) & [done.txt](done.txt)

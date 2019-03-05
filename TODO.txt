@@ -1,11 +1,13 @@
 x Fedora minimal server & basic Ansible with Monitoring & Virtualization
-- OpenShift v4 KVM installation.
+- OpenShift v4 KVM installation
+- join forces with https://github.com/openshift/installer/pull/636 && https://github.com/openshift/installer/pull/1188 (https://github.com/dhellmann/ansible-openshift-libvirt)
 
 - immediately install updates and reboot (in addition to dnf-automatic)
 - faster secure-ssh - check files, to avoid unneccessary restart sshd
 x install Python pre-reqs in a playbook (tested via sudo dnf remove python libselinux-python ; sudo dnf autoremove)
 - How to correctly secure sudo but avoid requiring --become --ask-become-pass (see README) - ssh key on root?
 - Ansible tasks replace with (or contrib to) Galaxy
+- Nested Virtualization?  Easier to scratch completely than having to re-setup bare metal.
 
 x write README
 - find some colleagues
