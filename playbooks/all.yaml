@@ -1,3 +1,4 @@
 - import_playbook: install-python.yaml
 - import_playbook: server.yaml
 - import_playbook: openshift4-libvirt-prereqs.yaml
+- import_playbook: openshift4-installer-build.yaml

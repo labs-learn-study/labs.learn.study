@@ -1,0 +1,45 @@
+- hosts: all
+  tasks:
+
+    - name: Install git
+      dnf:
+        name: git
+        state: present
+
+    - name: Git clone openshift4-installer <https://github.com/openshift/installer>
+      git:
+        repo: https://github.com/openshift/installer
+        dest: /opt/openshift-installer.git
+        version: master
+        update: no
+
+    - name: Create /opt/openshift-installer.git/bin/ directory
+      file:
+        path: /opt/openshift-installer.git/bin/
+        state: directory
+
+    - name: Create /opt/openshift-installer.git/images/libvirt/ directory
+      file:
+        path: /opt/openshift-installer.git/images/libvirt/
+        state: directory
+
+    - name: Create Dockerfile for openshift-install with KVM support
+      copy:
+        dest: /opt/openshift-installer.git/images/libvirt/Dockerfile
+        # Inspired by images/nested-libvirt/Dockerfile, but simplified:
+        content: |
+          FROM openshift/origin-release:golang-1.10 AS build
+          WORKDIR /go/src/github.com/openshift/installer
+          COPY . .
+          RUN TAGS=libvirt hack/build.sh
+
+    - name: Install Buildah <https://github.com/containers/buildah>
+      dnf:
+        name: buildah
+        state: present
+
+    - name: Build openshift-install using buildah (in-container)
+      command: buildah build-using-dockerfile -v /opt/openshift-installer.git/bin/:/go/src/github.com/openshift/installer/bin/ -f images/libvirt/Dockerfile .
+      args:
+        chdir: /opt/openshift-installer.git
+        creates: /opt/openshift-installer.git/bin/openshift-install
