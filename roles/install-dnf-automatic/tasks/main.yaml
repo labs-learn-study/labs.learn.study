@@ -1,0 +1,5 @@
+- name: Install DNF Automatic Updates
+  dnf:
+    name: 'dnf-automatic'
+    state: present
+  notify: start dnf-automatic
