@@ -1,0 +1,19 @@
+# https://github.com/openshift/installer/blob/master/docs/dev/libvirt-howto.md
+# IP Forwarding is already enabled on Fedora 29 server
+# but let's apply the remaining required changes here:
+- hosts: all
+  tasks:
+    - name: Configure libvirt to accept TCP connections
+      lineinfile:
+        dest: /etc/libvirt/libvirtd.conf
+        regexp: "^{{ item.param }}"
+        insertafter: "^#?{{ item.param }}"
+        line: "{{ item.param }} = {{ item.value }}"
+        backup: yes
+      with_items:
+        - { param: 'listen_tls', value: '0' }
+        - { param: 'listen_tcp', value: '1' }
+        - { param: 'auth_tcp',   value: '"none"' }
+        - { param: 'tcp_port',   value: '"16509"' }
+    # TODO Configure default libvirt storage pool
+    # TODO Set up NetworkManager DNS overlay
