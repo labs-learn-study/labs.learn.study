@@ -2,10 +2,9 @@
 
 ## How to use
 
-Edit the `hosts` inventory file to contain the hostname or IP of a
-minimal Fedora 29 Server (only pre-requisite is `sudo dnf install -y python libselinux-python`), and then run:
+Edit the `hosts` inventory file to contain the hostname or IP of a minimal Fedora 29 Server, and then run:
 
-    ansible-playbook -i hosts --become --ask-become-pass playbook.yaml
+    ansible-playbook -i hosts --become --ask-become-pass playbooks/all.yaml
 
 ## How to develop
 

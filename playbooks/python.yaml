@@ -1,0 +1,5 @@
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: 'Install Python for Ansible'
+      raw: dnf install -y python libselinux-python
