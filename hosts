@@ -1,2 +1,3 @@
 [hypervisors]
-192.168.1.180
+192.168.1.180  ansible_python_interpreter=/usr/bin/python3
+# Using python3 is required on Fedora 29 Server for the Ansible firewalld task to work.
