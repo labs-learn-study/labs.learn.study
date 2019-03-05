@@ -1,3 +1,11 @@
+- Fedora minimal server & basic Ansible with Monitoring & Virtualization
+- OpenShift v4 KVM installation.
+
+- faster secure-ssh - check files, to avoid unneccessary restart sshd
+- install Python pre-reqs in a playbook (test via ; sudo dnf remove python libselinux-python ; sudo dnf autoremove)
+- How to correctly secure sudo but avoid requiring --become --ask-become-pass (see README) - ssh key on root?
+- Ansible tasks replace with (or contrib to) Galaxy
+
 x write README
 - find some colleagues
 - fix a better name for this?
@@ -6,13 +14,10 @@ x write README
 - scrap uptime by another process which stores them in .. Prometheus.  Grafana dashboard.
 - RPi nginx "We're UP!"
 
-- Fedora minimal server & basic Ansible with Monitoring & Virtualization
 - Self testing.. how may be with https://pagure.io/standard-test-roles, https://fedoraproject.org/wiki/CI/Standard_Test_Interface, https://fedoraproject.org/wiki/CI/Standard_Test_Roles
 
-- OpenShift v4 KVM installation.  
-
 - Ansible from source, via https://www.zuul-ci.org? (not Jenkins?)  How-to dev?
-- Ansible Playbook recording https://getara.org, https://opensource.com/article/18/5/analyzing-ansible-runs-using-ara, 
+- Ansible Playbook recording https://getara.org, https://opensource.com/article/18/5/analyzing-ansible-runs-using-ara,
 
 - KVM scripting, how to?  Ansible?  Just virsh.bash?  New tool??
 
@@ -23,7 +28,7 @@ x write README
 - Prometheus Kubernetes
 - Server & VM #monitoring scrape all data, OVS and physical switches
 
-- ngrok.com equivalent FLOSS? 
+- ngrok.com equivalent FLOSS?
 
 - Minecraft https://github.com/OASIS-learn-study
 
@@ -39,16 +44,16 @@ x write README
 
 - automate load balance for server maintenance by WebDriver remote controlling home router (then YANG model that..)
 
-- OpenWrt in a VM? 
+- OpenWrt in a VM?
 - add additional physical GB NICs via USB 3.0 ???
 
 - VyOS (has a netconf agent) in a VM?
 
-- hardware router for home fiber & WiFi with VyOS or OpenWrt https://openwrt.org/toh/views/toh_available_864 
+- hardware router for home fiber & WiFi with VyOS or OpenWrt https://openwrt.org/toh/views/toh_available_864
 
 - NETCONF VyOS (has a netconf agent)
 
-- NETCONF managed OpenWrt 
+- NETCONF managed OpenWrt
   https://oldwiki.archive.openwrt.org/inbox/howto/opencpe
   https://github.com/CZ-NIC/nuci
   https://gitlab.labs.nic.cz/labs/jetconf/wikis/restconf-openwrt
