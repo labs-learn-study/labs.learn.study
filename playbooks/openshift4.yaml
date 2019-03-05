@@ -23,6 +23,31 @@
         line: 'LIBVIRTD_ARGS="--listen"'
         backup: yes
       notify: restart libvirtd
+
+    - name: Configure default libvirt Storage Pool
+      virt_pool:
+        state: present
+        name: default
+        xml: |
+          <pool type='dir'>
+            <name>default</name>
+            <target>
+              <path>/var/lib/libvirt/images</path>
+            </target>
+          </pool>
+    - name: Activate default libvirt Storage Pool
+      virt_pool:
+        state: active
+        name: default
+    - name: Set autostart for default libvirt Storage Pool
+      virt_pool:
+        name: default
+        autostart: yes
+    - name: Confirm that default libvirt Storage Pool is configured
+      virt_pool:
+        command: status
+        name: "default"
+
     - name: Update firewalld to allow libvirt clients from VMs (port)
       firewalld:
         port: 16509/tcp
@@ -34,6 +59,7 @@
         source: "192.168.126.0/24"
         state: enabled
         immediate: yes
+
   handlers:
     - name: restart libvirtd
       service: name=libvirtd state=restarted
