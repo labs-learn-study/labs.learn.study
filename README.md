@@ -8,15 +8,15 @@ Edit the `hosts` inventory file to contain the hostname or IP of a minimal Fedor
 
 This will install OpenShift v4 using the [openshift installer](https://github.com/openshift/installer).
 
-The Installation log is in /opt/openshift-install.run/.openshift_install.log on your server.
+The log is in /opt/openshift-install.run/.openshift_install.log on your server.
 
-If you have trouble, refer to [the troubleshooting guide](https://github.com/openshift/installer/blob/master/docs/user/troubleshooting.md).
+If you have trouble, refer to [the upstream troubleshooting guide](https://github.com/openshift/installer/blob/master/docs/user/troubleshooting.md) and the [Debugging OpenShift 4.x product documentation](https://access.redhat.com/articles/3780981).
 
 The installation will take at least tens of minutes, depending on your hardware.
 
-## How to develop
+## How to develop in this project
 
-    ansible-playbook --syntax-check playbook.yaml
+    ansible-playbook --syntax-check playbooks/*.yaml
 
 ## Blah
 
