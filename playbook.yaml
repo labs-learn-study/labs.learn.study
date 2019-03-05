@@ -4,3 +4,4 @@
     - secure-ssh
     - install-dnf-automatic
     - install-virtualization
+    - install-cockpit

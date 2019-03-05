@@ -1,3 +1,4 @@
+# https://docs.fedoraproject.org/en-US/quick-docs/securing-the-system-by-keeping-it-up-to-date/
 - name: Install DNF Automatic Updates
   dnf:
     name: 'dnf-automatic'

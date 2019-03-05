@@ -1,6 +1,7 @@
 - Fedora minimal server & basic Ansible with Monitoring & Virtualization
 - OpenShift v4 KVM installation.
 
+- immediately install updates and reboot (in addition to dnf-automatic)
 - faster secure-ssh - check files, to avoid unneccessary restart sshd
 - install Python pre-reqs in a playbook (test via ; sudo dnf remove python libselinux-python ; sudo dnf autoremove)
 - How to correctly secure sudo but avoid requiring --become --ask-become-pass (see README) - ssh key on root?

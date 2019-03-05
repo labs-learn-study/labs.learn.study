@@ -1,0 +1,2 @@
+- name: restart cockpit
+  service: name=cockpit.socket enabled=yes state=restarted
