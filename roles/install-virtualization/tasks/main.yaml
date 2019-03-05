@@ -3,3 +3,4 @@
   dnf:
     name: '@virtualization'
     state: present
+  notify: restart libvirtd
