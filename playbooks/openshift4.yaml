@@ -48,6 +48,26 @@
         command: status
         name: "default"
 
+    - name: Set up NetworkManager DNS overlay
+      ini_file:
+        path: /etc/NetworkManager/NetworkManager.conf
+        section: main
+        option: dns
+        value: dnsmasq
+        mode: 0644
+        backup: yes
+      notify:
+        - reload NetworkManager
+    - name: Tell dnsmasq to use cluster
+      template:
+        src: NetworkManager-openshift.conf
+        dest: /etc/NetworkManager/dnsmasq.d/openshift.conf
+        owner: root
+        group: root
+        mode: 0644
+      notify:
+        - reload NetworkManager
+
     - name: Update firewalld to allow libvirt clients from VMs (port)
       firewalld:
         port: 16509/tcp
@@ -63,6 +83,8 @@
   handlers:
     - name: restart libvirtd
       service: name=libvirtd state=restarted
+    - name: reload NetworkManager
+      service: name=NetworkManager state=reloaded
 
     # TODO Configure default libvirt storage pool
     # TODO Set up NetworkManager DNS overlay
