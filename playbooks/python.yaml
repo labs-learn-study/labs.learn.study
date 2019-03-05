@@ -2,4 +2,5 @@
   gather_facts: no
   tasks:
     - name: 'Install Python for Ansible'
-      raw: dnf install -y python libselinux-python
+      raw: test -e /usr/bin/python || (dnf install -y python libselinux-python)
+# TODO How do you make this provide "ok" instead of "changed" status when it already exists?!
