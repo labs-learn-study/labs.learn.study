@@ -1,0 +1,5 @@
+---
+- name: Install Virtualization
+  dnf:
+    name: '@virtualization'
+    state: present

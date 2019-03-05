@@ -2,3 +2,4 @@
   roles:
     # - install-python
     - secure-ssh
+    - install-virtualization
