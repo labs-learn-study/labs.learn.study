@@ -1,0 +1,45 @@
+- hosts: all
+  tasks:
+
+    - name: Create /opt/openshift-install.run/assets/ directory
+      file:
+        path: /opt/openshift-install.run/assets/
+        state: directory
+
+    - name: Create install-config.yaml
+      copy:
+        dest: /opt/openshift-install.run/assets/install-config.yaml
+        # TODO use an Ansible template for this and make the pullSecret a variable...
+        content: |
+          apiVersion: v1beta4
+          baseDomain: tt.testing
+          compute:
+          - name: worker
+            platform: {}
+            replicas: 1
+          controlPlane:
+            name: master
+            platform: {}
+            replicas: 1
+          metadata:
+            creationTimestamp: null
+            name: test1
+          networking:
+            clusterNetwork:
+            - cidr: 10.128.0.0/14
+              hostPrefix: 23
+            machineCIDR: 192.168.126.0/24
+            networkType: OpenShiftSDN
+            serviceNetwork:
+            - 172.30.0.0/16
+          platform:
+            libvirt:
+              URI: qemu+tcp://192.168.122.1/system
+              network:
+                if: tt0
+          pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3ZvcmJ1cmdlcjFmYW1xaWxnaGl5Y3Noa2d6amF0ejU5ZGNuYzpMOEtUOUs1MjZSRzYwTUxYQ1RROUFZUlA0RzA1RFIwMVhNUE5WTEtXNjhOQlVJS1lRREJYTkxLUUhLWlJNVkNV","email":"vorburger@redhat.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3ZvcmJ1cmdlcjFmYW1xaWxnaGl5Y3Noa2d6amF0ejU5ZGNuYzpMOEtUOUs1MjZSRzYwTUxYQ1RROUFZUlA0RzA1RFIwMVhNUE5WTEtXNjhOQlVJS1lRREJYTkxLUUhLWlJNVkNV","email":"vorburger@redhat.com"},"registry.connect.redhat.com":{"auth":"NTEwMTY5NTd8dWhjLTFGYW1xSWxnSGl5Y3NIa0daamFUejU5RGNuQzpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmxaamczWmpoaVkyUTFNVFkwWTJNeVlUTmxZamRtTjJFNFlqZ3pNV0ptWmlKOS5jLTNvdWlSTjFWb0RvZVZ0RzM1QmZodGxkWU5QVjZsWDB0SFNxY0s4aE4wclV0UUxhWU1LQlFwcVdqNGlHTmNZYjFnUEYxNzktNXM4Zi1EZjJZczczQUxXQVdKMVAzMWwzdW10MEVjazZvRHJSV3pnVE9RUVRER01vd29pc1pWZXZKUHhJNmVsMHBvOEMwc1gxSkZZTjZIRVhkT0dYbENuWlZZNnRVczA3aW5ud1dCcFdfQ1VhRW9JaDRibE1MbnJGbTRudzVtekNiY0RDX1U4NnVSRGQwQ2FiUHdpVTdrREpnN1lKQ2x3dml1RVJWM29tTWxRdzNJdUxvc2VteFFnT1FQOHN3SnBGbnZlVm5sWDF6elZsZXZGc3ZtWjFWNWE2ZWotRGhqSzBDX3dXZnJKbV9QcjVMTVJCZVA5WXFhdHZzVTZCdDlRbUlwYmZYZlhKYmg2aGJXcmdYdGVHTUZDMHR2SVZQUEZSRGFodWl2OHpXRHBMQmdsSmVLclNmNWxQZWpLWDhqQXRzYmluZUxkSHlDaGp2cGVFWTRXVi1GTzBuR2dPOGNWVmg5bnVqc2JYR3lNUy1INHJ1MEpsVEpoVXd0M09tbTBjbGhfbEZQNFdnNUxta25sVXk5NTdJSWtnWGlLWEl4R2xxWlFSR1FkY09KUWJWczByMjlRY0NZZ2F5OEFvLXdwVlEwZjUzaFNXOTNCbUpEQkJzOVFTbWVGdkwyVUpmUzJDRE9xaXpEQzBoTjJjZkVlenB6bXIxRktQdkNBVmxWd0k2OWVnR01mQmtpbXF3ei1Ka0J4ZldhRkpOVUp4UjZaMVhvMEhuR29qOWw0NEp4cVdBM3dPYU56Ry1Ga0FQcEp6akNUMmdvY0RXVEZsZkRPelpxcDg2V2JxVlpNNUVVYXdxdw==","email":"vorburger@redhat.com"},"registry.redhat.io":{"auth":"NTEwMTY5NTd8dWhjLTFGYW1xSWxnSGl5Y3NIa0daamFUejU5RGNuQzpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmxaamczWmpoaVkyUTFNVFkwWTJNeVlUTmxZamRtTjJFNFlqZ3pNV0ptWmlKOS5jLTNvdWlSTjFWb0RvZVZ0RzM1QmZodGxkWU5QVjZsWDB0SFNxY0s4aE4wclV0UUxhWU1LQlFwcVdqNGlHTmNZYjFnUEYxNzktNXM4Zi1EZjJZczczQUxXQVdKMVAzMWwzdW10MEVjazZvRHJSV3pnVE9RUVRER01vd29pc1pWZXZKUHhJNmVsMHBvOEMwc1gxSkZZTjZIRVhkT0dYbENuWlZZNnRVczA3aW5ud1dCcFdfQ1VhRW9JaDRibE1MbnJGbTRudzVtekNiY0RDX1U4NnVSRGQwQ2FiUHdpVTdrREpnN1lKQ2x3dml1RVJWM29tTWxRdzNJdUxvc2VteFFnT1FQOHN3SnBGbnZlVm5sWDF6elZsZXZGc3ZtWjFWNWE2ZWotRGhqSzBDX3dXZnJKbV9QcjVMTVJCZVA5WXFhdHZzVTZCdDlRbUlwYmZYZlhKYmg2aGJXcmdYdGVHTUZDMHR2SVZQUEZSRGFodWl2OHpXRHBMQmdsSmVLclNmNWxQZWpLWDhqQXRzYmluZUxkSHlDaGp2cGVFWTRXVi1GTzBuR2dPOGNWVmg5bnVqc2JYR3lNUy1INHJ1MEpsVEpoVXd0M09tbTBjbGhfbEZQNFdnNUxta25sVXk5NTdJSWtnWGlLWEl4R2xxWlFSR1FkY09KUWJWczByMjlRY0NZZ2F5OEFvLXdwVlEwZjUzaFNXOTNCbUpEQkJzOVFTbWVGdkwyVUpmUzJDRE9xaXpEQzBoTjJjZkVlenB6bXIxRktQdkNBVmxWd0k2OWVnR01mQmtpbXF3ei1Ka0J4ZldhRkpOVUp4UjZaMVhvMEhuR29qOWw0NEp4cVdBM3dPYU56Ry1Ga0FQcEp6akNUMmdvY0RXVEZsZkRPelpxcDg2V2JxVlpNNUVVYXdxdw==","email":"vorburger@redhat.com"}}}'
+
+    - name: Run openshift-install
+      command: /opt/openshift-installer.git/bin/openshift-install --dir /opt/openshift-install.run/assets/ create cluster
+      args:
+        chdir: /opt/openshift-install.run/
