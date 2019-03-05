@@ -6,6 +6,14 @@ Edit the `hosts` inventory file to contain the hostname or IP of a minimal Fedor
 
     ansible-playbook -i hosts --become --ask-become-pass playbooks/all.yaml
 
+This will install OpenShift v4 using the [openshift installer](https://github.com/openshift/installer).
+
+The Installation log is in /opt/openshift-install.run/.openshift_install.log on your server.
+
+If you have trouble, refer to [the troubleshooting guide](https://github.com/openshift/installer/blob/master/docs/user/troubleshooting.md).
+
+The installation will take at least tens of minutes, depending on your hardware.
+
 ## How to develop
 
     ansible-playbook --syntax-check playbook.yaml
