@@ -1,2 +1,2 @@
-- import_playbook: python.yaml
+- import_playbook: install-python.yaml
 - import_playbook: server.yaml
