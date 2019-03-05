@@ -1,5 +1,5 @@
 - name: Install Cockpit <https://cockpit-project.org>
   dnf:
-    name: 'cockpit,cockpit-bridge,cockpit-dashboard,cockpit-networkmanager,cockpit-selinux,cockpit-system,cockpit-machines'
+    name: 'cockpit,cockpit-bridge,cockpit-dashboard,cockpit-networkmanager,cockpit-selinux,cockpit-system,cockpit-machines,cockpit-pcp'
     state: present
   notify: restart cockpit
