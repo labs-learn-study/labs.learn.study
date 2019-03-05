@@ -1,6 +1,7 @@
 - hosts: all
   gather_facts: no
   tasks:
-    - name: 'Install Python for Ansible'
-      raw: test -e /usr/bin/python || (dnf install -y python libselinux-python)
-# TODO How do you make this provide "ok" instead of "changed" status when it already exists?!
+    - name: Install Python for Ansible
+      script: install-python.sh
+      args:
+        creates: /usr/bin/python
