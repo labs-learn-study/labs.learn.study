@@ -17,6 +17,7 @@ The installation will take at least tens of minutes, depending on your hardware.
 ## How to develop in this project
 
     ansible-playbook --syntax-check playbooks/*.yaml
+    ansible-lint playbooks/*.yaml
 
 ## Blah
 
