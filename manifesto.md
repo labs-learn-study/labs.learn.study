@@ -23,3 +23,8 @@ While the basic building blocks for this are emerging, we're far from the destin
 There's lots to do.  It will be a journey.  It may span generations (thus EDU).
 
 Let's get started.
+
+
+_References_
+
+* https://youtu.be/O--bzZ9ker0
